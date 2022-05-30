@@ -6,7 +6,7 @@ import Image from 'next/image'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
-const Home: NextPage = () => {
+const Second: NextPage = () => {
   useEffect(() => {
     const blocks = document.querySelectorAll('.animation')
 
@@ -35,11 +35,11 @@ const Home: NextPage = () => {
   const renderList = () => {
     const list = []
 
-    for (let i = 20; i > 0; i--) {
+    for (let i = 20; i >= 0; i--) {
       list.push(
         <div
           key={i}
-          className="animation bg-blue-500 w-20 h-20 mb-10 opacity-0 translate-x-10"
+          className="animation bg-red-500 w-20 h-20 mb-10 opacity-0 translate-x-10"
         />
       )
     }
@@ -64,12 +64,12 @@ const Home: NextPage = () => {
 
         <ul className="flex gap-8">
           <li>
-            <span>First Page</span>
+            <Link href="/">
+              <a className="text-blue-500">First Page</a>
+            </Link>
           </li>
           <li>
-            <Link href="/second">
-              <a className="text-blue-500">Second Page</a>
-            </Link>
+            <span>Second Page</span>
           </li>
         </ul>
 
@@ -91,4 +91,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default Second
